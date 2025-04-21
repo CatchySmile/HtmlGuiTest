@@ -1,4 +1,4 @@
-# HTML GUI Test - Koy
+# HTML GUI Test
 
 This project is a demonstration of a customizable and interactive HTML-based GUI. It features movable UI components, toggleable dark mode, and various interactive elements such as buttons and links. It is all based within a single .html file as a challenge to myself. This project was largely inspired by the look of a stereotypical Minecraft hacked clients UI.
 
