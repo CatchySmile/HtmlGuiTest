@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<!-- 
+Icons from https://icons8.com/
+-->
+<!--
+This is a HTML GUI I made based off the look of a Minecraft hacked client menu, I made this for fun and to learn HTML/CSS/JS more. All gui's are movable.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Gui Test - Koy</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(232, 232, 247); 
+    
+}
+
+.dark-mode {
+  background-color: rgb(22, 22, 25);
+  color: black;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.this-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    cursor: move;
+    background-color: #f0f7f9;
+    animation: glow 2s infinite alternate;
+}
+
+.this-box .top-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+}
+
+.file {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.file img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.file:hover {
+    background-color: #f0f0f0;
+}
+
+.link-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    position: absolute;
+    left: 420px;
+    top: 50px;
+    cursor: move;
+    background-color: #f0f7f9;
+    animation: glow 2s infinite alternate;
+}
+
+.link-box .top-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.link img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.link:hover {
+    background-color: #f0f0f0;
+}
+
+.credits-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    position: absolute;
+    left: 790px;
+    top: 50px;
+    cursor: move;
+    background-color: #f0f7f9;
+    animation: glow 2s infinite alternate;
+}
+
+.credits-box .top-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+}
+
+.credits {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.credits img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.credits:hover {
+    background-color: #f0f0f0;
+}
+
+.paragraph-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    position: absolute;
+    left: 1160px;
+    top: 50px;
+    cursor: move;
+    background-color: #f0f7f9;
+    animation: glow 2s infinite alternate;
+}
+
+.paragraph-box .top-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+}
+
+.paragraph {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.paragraph:hover {
+    background-color: #f0f0f0;
+}
+
+ 
+
+.show-more-button {
+    background-color: #dee3e4;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dark-button {
+    background-color: #dee3e4;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    top:95%;
+    left:0%;
+    position: absolute;
+    border: 2px solid #000000;
+
+}
+
+.wip {
+    background-color: #dee3e4;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 3px;
+    top:0%;
+    left:46%;
+    position: absolute;
+    border: 2px solid #000000;
+
+}
+
+.dark-button:hover {
+    background-color: rgb(205, 214, 214);
+}
+.show-more-button:hover {
+    background-color: rgb(205, 214, 214);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 4px rgb(21, 146, 146);
+    }
+    100% {
+        box-shadow: 0 0 20px rgb(21, 146, 146);
+    }
+}
+
+        .patch {
+    margin-bottom: 10px;
+}
+
+.build-id {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.description {
+    margin-left: 20px;
+}
+
+.hidden {
+    display: none;
+}
+.view-whatever-log {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.view-whatever-log:hover {
+    text-decoration: underline;
+}
+
+.other-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    position: absolute;
+    left: 1160px;
+    top: 350px;
+    cursor: move;
+    background-color: #f0f7f9;
+    animation: glow 2s infinite alternate;
+}
+
+.other-box .top-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+}
+
+.others {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.others img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.others:hover {
+    background-color: #f0f0f0;
+}
+.againanother-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    position: absolute;
+    left: 420px;
+    top: 360px;
+    cursor: move;
+    background-color: #f0f7f9;
+    animation: glow 2s infinite alternate;
+}
+
+.againanother-box .top-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+}
+
+.other2 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.other2 img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.other2:hover {
+    background-color: #f0f0f0;
+}
+
+.this-submission-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    position: absolute;
+    left: -370px;
+    top: 365px;
+    cursor: move;
+    background-color: #f0f7f9;
+    animation: glow 2s infinite alternate;
+}
+
+.this-submission-box .top-bar {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px 5px 0 0;
+    cursor: move;
+}
+
+.file-submission {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.file-submission img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.file-submission:hover {
+    background-color: #f0f0f0;
+}
+
+    </style>
+
+<button onclick="myFunction()" class="dark-button">Toggle dark mode</button>
+<h1 class="wip">WIP v0.8.8 Pre </h1>
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+<body>
+    <div class="container">
+        <div class="this-box" id="this-box">
+            <div class="top-bar" id="top-bar">Some buttons</div>
+            <div class="file" onclick="downloadFile('example.txt')">
+                <img src="https://img.icons8.com/external-line-icons-royyan-wijaya/64/external-inject-medical-stuff-line-icons-royyan-wijaya.png"/>
+                Lorem ipsum
+            </div>
+            <div class="file" onclick="downloadFile('example.txt')">
+                <img src="https://img.icons8.com/ios/50/butterfly--v1.png"/>
+                Lorem ipsum
+            </div>
+            <div class="file" onclick="downloadFile('example.txt')">
+                <img src="https://img.icons8.com/ios/50/lightning-bolt--v1.png"/>
+                Lorem ipsum
+            </div>
+            <div class="file" onclick="downloadFile('example.txt')">
+                <img src="https://img.icons8.com/ios/50/beer--v1.png"/>
+                Lorem ipsum [Updated]
+            </div>
+            <div class="file" onclick="downloadFile('example.txt')">
+                <img src="https://img.icons8.com/ios/50/time--v1.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('example.txt')">
+                <img src="https://img.icons8.com/ios/50/time--v1.png"/>
+                Lorem ipsum!!
+            </div>
+            
+        </div>
+        <div class="link-box" id="link-box">
+            <div class="top-bar" id="top-bar-link">Some more buttons</div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/bomb.png"/>
+                Lorem ipsum lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/sword.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/potato.png"/>
+                Lorem ipsum lorem
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/shield.png"/>
+                Lorem ipsum
+            </div>
+            
+        </div>
+        <div class="credits-box" id="credits-box">
+            <div class="top-bar" id="top-bar-credits">Credits</div>
+            <div class="link" onclick="openLink('https://github.com/CatchySmile/GuiTest')">
+                <img src="https://img.icons8.com/ios/50/000000/web.png"/>
+                2koy/CatchySmile
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/external-line-icons-royyan-wijaya/64/external-inject-medical-stuff-line-icons-royyan-wijaya.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/potato.png"/>
+                Lorem ipsum
+            </div>
+            <div class="credits">
+                <img src="https://img.icons8.com/ios-glyphs/30/monster-energy.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/doge.png"/>
+                Lorem ipsum
+            </div>
+        </div>
+        <div class="other-box" id="other-box">
+            <div class="top-bar" id="top-bar-other"> Some lovely example text</div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/pulsar-line/48/clown.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/pulsar-line/48/clown.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/pulsar-line/48/clown.png"/>
+                Lorem ipsum
+            </div>
+        </div>
+
+
+        <div class="againanother-box" id="againanother-box">
+            <div class="top-bar" id="top-bar-again">More Text</div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/000000/web.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/000000/web.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/000000/web.png"/>
+                Lorem ipsum
+            </div>
+            <div class="link" onclick="openLink('https://example.com')">
+                <img src="https://img.icons8.com/ios/50/000000/web.png"/>
+                Lorem ipsum
+            </div>
+        </div>
+        
+
+        <div class="paragraph-box" id="paragraph-box">
+            <div class="top-bar" id="top-bar-paragraph">Random stuff & News</div>
+            <div class="paragraph">
+                <div class="patch">
+                    <div class="build-id">Some News</div>
+                    <div class="description">Lorem ipsum lorem ipsum lorem ipsum</div>
+                </div>
+                <div class="patch">
+                    <div class="build-id">Text: 13540028 <a href="https://example.com" class="view-whatever-log" target="_blank">[+]</a></div>
+                    <div class="description">Lorem ipsum, lorem ipsum lorem ipsum</div>
+                </div>
+                <div class="patch hidden">
+                    <div class="build-id">Text: 13472245 <a href="https://example.com" class="view-whatever-log" target="_blank">[+]</a></div>
+                    <div class="description">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</div>
+                </div>
+            </div>
+            <button id="show-more-button" class="show-more-button">Show More</button>
+            </div>
+        
+            </div>
+            <div class="this-submission-box" id="this-submission-box">
+                <div class="top-bar" id="top-bar-this-submission">Ipsum Lorem?</div>
+                <div class="link" onclick="openLink('https://example.com')">
+                    <img src="https://img.icons8.com/pastel-glyph/64/upload--v1.png"/>
+                    Upload File
+                </div>
+            </div>
+            
+        </div>
+        
+<script>
+document.getElementById('show-more-button').addEventListener('click', function() {
+    var hiddenPatches = document.querySelectorAll('.patch.hidden');
+    var showMoreButton = document.getElementById('show-more-button');
+    
+    if (hiddenPatches.length > 0) {
+        hiddenPatches.forEach(function(patch) {
+            patch.classList.remove('hidden');
+        });
+        showMoreButton.textContent = 'Show Less';
+    } else {
+        var allPatches = document.querySelectorAll('.patch');
+        allPatches.forEach(function(patch, index) {
+            if (index >= 2) {
+                patch.classList.add('hidden');
+            }
+        });
+        showMoreButton.textContent = 'Show More';
+    }
+});
+
+</script>
+
+
+    <script>
+        var topBar = document.getElementById('top-bar');
+        var fileBox = document.getElementById('this-box');
+
+        var topBarLink = document.getElementById('top-bar-link');
+        var linkBox = document.getElementById('link-box');
+
+        var topBarCredits = document.getElementById('top-bar-credits');
+        var creditsBox = document.getElementById('credits-box');
+
+        var topBarParagraph = document.getElementById('top-bar-paragraph');
+
+        var paragraphBox = document.getElementById('paragraph-box');
+
+        var topBarothers = document.getElementById('top-bar-other');
+        var othersBox = document.getElementById('other-box');
+
+        var topBarother2 = document.getElementById('top-bar-again');
+        var other2Box = document.getElementById('againanother-box');
+
+        var topBarFileSubmission = document.getElementById('top-bar-this-submission');
+        var fileSubmissionBox = document.getElementById('this-submission-box');
+
+        var offsetX, offsetY, isDraggingFile = false, isDraggingLink = false, isDraggingCredits = false, isDraggingParagraph = false;
+
+        function handleMouseDownFile(event) {
+
+            isDraggingFile = true;
+
+            offsetX = event.clientX - fileBox.offsetLeft;
+            offsetY = event.clientY - fileBox.offsetTop;
+        }
+
+        function handleMouseMoveFile(event) {
+
+            if (isDraggingFile) {
+
+                var newX = event.clientX - offsetX;
+                var newY = event.clientY - offsetY;
+
+                fileBox.style.left = newX + 'px';
+                fileBox.style.top = newY + 'px';
+            }
+        }
+
+
+        function handleMouseUpFile(event) {
+
+            isDraggingFile = false;
+        }
+
+
+        topBar.addEventListener('mousedown', handleMouseDownFile);
+        window.addEventListener('mousemove', handleMouseMoveFile);
+        window.addEventListener('mouseup', handleMouseUpFile);
+
+
+        function handleMouseDownLink(event) {
+            isDraggingLink = true;
+            offsetX = event.clientX - linkBox.offsetLeft;
+            offsetY = event.clientY - linkBox.offsetTop;
+        }
+
+        function handleMouseMoveLink(event) {
+            if (isDraggingLink) {
+                var newX = event.clientX - offsetX;
+                var newY = event.clientY - offsetY;
+                linkBox.style.left = newX + 'px';
+                linkBox.style.top = newY + 'px';
+            }
+        }
+
+        function handleMouseUpLink(event) {
+            isDraggingLink = false;
+        }
+
+        topBarLink.addEventListener('mousedown', handleMouseDownLink);
+        window.addEventListener('mousemove', handleMouseMoveLink);
+        window.addEventListener('mouseup', handleMouseUpLink);
+
+        function handleMouseDownCredits(event) {
+            isDraggingCredits = true;
+            offsetX = event.clientX - creditsBox.offsetLeft;
+            offsetY = event.clientY - creditsBox.offsetTop;
+        }
+
+        function handleMouseMoveCredits(event) {
+            if (isDraggingCredits) {
+                var newX = event.clientX - offsetX;
+                var newY = event.clientY - offsetY;
+                creditsBox.style.left = newX + 'px';
+                creditsBox.style.top = newY + 'px';
+            }
+        }
+
+        function handleMouseUpCredits(event) {
+            isDraggingCredits = false;
+        }
+
+        topBarCredits.addEventListener('mousedown', handleMouseDownCredits);
+        window.addEventListener('mousemove', handleMouseMoveCredits);
+        window.addEventListener('mouseup', handleMouseUpCredits);
+
+        function handleMouseDownParagraph(event) {
+            isDraggingParagraph = true;
+            offsetX = event.clientX - paragraphBox.offsetLeft;
+            offsetY = event.clientY - paragraphBox.offsetTop;
+        }
+
+        function handleMouseMoveParagraph(event) {
+            if (isDraggingParagraph) {
+                var newX = event.clientX - offsetX;
+                var newY = event.clientY - offsetY;
+                paragraphBox.style.left = newX + 'px';
+                paragraphBox.style.top = newY + 'px';
+            }
+        }
+
+        function handleMouseUpParagraph(event) {
+            isDraggingParagraph = false;
+        }
+
+        var offsetX, offsetY, isDraggingothers = false;
+
+function handleMouseDownothers(event) {
+    isDraggingothers = true;
+    offsetX = event.clientX - othersBox.offsetLeft;
+    offsetY = event.clientY - othersBox.offsetTop;
+}
+
+function handleMouseMoveothers(event) {
+    if (isDraggingothers) {
+        var newX = event.clientX - offsetX;
+        var newY = event.clientY - offsetY;
+        othersBox.style.left = newX + 'px';
+        othersBox.style.top = newY + 'px';
+    }
+}
+
+function handleMouseUpothers(event) {
+    isDraggingothers = false;
+}
+
+topBarothers.addEventListener('mousedown', handleMouseDownothers);
+window.addEventListener('mousemove', handleMouseMoveothers);
+window.addEventListener('mouseup', handleMouseUpothers);
+
+        topBarParagraph.addEventListener('mousedown', handleMouseDownParagraph);
+        window.addEventListener('mousemove', handleMouseMoveParagraph);
+        window.addEventListener('mouseup', handleMouseUpParagraph);
+
+        function downloadFile(filename) {
+            var link = document.createElement('a');
+            link.href = 'files/' + filename;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function openLink(link) {
+            window.open(link, '_blank');
+        }
+
+        var offsetX, offsetY, isDraggingother2 = false;
+
+function handleMouseDownother2(event) {
+    isDraggingother2 = true;
+    offsetX = event.clientX - other2Box.offsetLeft;
+    offsetY = event.clientY - other2Box.offsetTop;
+}
+
+function handleMouseMoveother2(event) {
+    if (isDraggingother2) {
+        var newX = event.clientX - offsetX;
+        var newY = event.clientY - offsetY;
+        other2Box.style.left = newX + 'px';
+        other2Box.style.top = newY + 'px';
+    }
+}
+
+function handleMouseUpother2(event) {
+    isDraggingother2 = false;
+}
+
+topBarother2.addEventListener('mousedown', handleMouseDownother2);
+window.addEventListener('mousemove', handleMouseMoveother2);
+window.addEventListener('mouseup', handleMouseUpother2);
+
+var offsetX, offsetY, isDraggingFileSubmission = false;
+
+function handleMouseDownFileSubmission(event) {
+    isDraggingFileSubmission = true;
+    offsetX = event.clientX - fileSubmissionBox.offsetLeft;
+    offsetY = event.clientY - fileSubmissionBox.offsetTop;
+}
+
+function handleMouseMoveFileSubmission(event) {
+    if (isDraggingFileSubmission) {
+        var newX = event.clientX - offsetX;
+        var newY = event.clientY - offsetY;
+        fileSubmissionBox.style.left = newX + 'px';
+        fileSubmissionBox.style.top = newY + 'px';
+    }
+}
+
+function handleMouseUpFileSubmission(event) {
+    isDraggingFileSubmission = false;
+}
+
+topBarFileSubmission.addEventListener('mousedown', handleMouseDownFileSubmission);
+window.addEventListener('mousemove', handleMouseMoveFileSubmission);
+window.addEventListener('mouseup', handleMouseUpFileSubmission);
+    </script>
+
+
+</body>
+</html>
